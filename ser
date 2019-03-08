@@ -5,9 +5,10 @@ from os import listdir, system
 DEV_PATH = "/dev/"
 
 if __name__ == '__main__':
-    devices = [f for f in listdir(DEV_PATH) if "tty.usbserial-" in f]
+    devices = [f for f in listdir(DEV_PATH) if "tty.usbserial-" in f or "tty.usbmodem" in f]
 
     # Sort the devices in reverse order 
+    devices.sort()
     devices.reverse()
 
     print("Serial devices:")
